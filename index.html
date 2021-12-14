@@ -1,0 +1,195 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Iztok Fister, Jr.</title>
+		<style type="text/css">
+			:root {
+				--link-color: #000000;
+				--bg-color: #fff;
+				--text-color: #000000;
+			}
+			[data-theme="dark"] {
+				--bg-color: #161625;
+				--link-color: #FF5733;
+				--text-color: #FFFFFF;
+			}
+			* {
+				color: var(--text-color);
+				font-family: monospace;
+				font-size: 14px;
+				/* max-width: 520px; */
+			}
+			body {
+				background-color: var(--bg-color);
+			}
+			a {
+				color: var(--link-color);
+				font-weight: bold;
+				text-decoration: none;
+			} 
+			h1 {
+				color: --var(--text-color);
+				font-weight: normal;
+			}
+			tab {
+				display: inline-block; 
+				margin-left: 5px; 
+			}
+			@media only screen and (min-width: 360px) {
+				tab {
+					margin-left: 20px;
+				}
+			}
+			@media only screen and (min-width: 600px) {
+				tab {
+					margin-left: 20vw;
+				}
+			}
+			@media only screen and (min-width: 768px) {
+				tab {
+					margin-left: 30vw;
+				}
+			}
+
+			.theme-switch-wrapper {
+				float: right;
+				display: flex;
+				align-items: center;
+
+				/* em {
+					margin-left: 10px;
+					font-size: 1rem;
+				} */
+			}
+			.theme-switch {
+				display: inline-block;
+				height: 23px;
+				position: relative;
+				width: 35px;
+			}
+
+			.theme-switch input {
+				display:none;
+			}
+
+			.slider {
+				background-color: #ccc;
+				bottom: 0;
+				cursor: pointer;
+				left: 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				transition: .4s;
+			}
+
+			.slider:before {
+				background-color: #fff;
+				bottom: 4px;
+				content: "";
+				height: 15px;
+				left: 4px;
+				position: absolute;
+				transition: .4s;
+				width: 15px;
+			}
+
+			input:checked + .slider {
+				background-color: #444444;
+			}
+
+			.slider.round:before {
+				background-color: #444444;
+			}
+
+			input:checked + .slider.round:before {
+				background-color: #FFFFFF;
+			}
+
+			input:checked + .slider:before {
+				transform: translateX(11px);
+			}
+
+			.slider.round {
+				border-radius: 15px;
+			}
+
+			.slider.round:before {
+				border-radius: 50%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="theme-switch-wrapper">
+		<label class="theme-switch" for="checkbox">
+			<input type="checkbox" id="checkbox" />
+			<div class="slider round"></div>
+		</label>
+		</div>
+		<div>
+			<h1>FISTER(1)<tab>User Commands<tab>FISTER(1)</h1>
+			<h2>NAME</h2>
+			<blockquote>
+			<p>Iztok_Fister_Jr - A Human Being</p>
+			</blockquote>
+			<h2>SYNOPSIS</h2>
+			<blockquote>
+			<p>
+				<b>iztokf</b> [<b><u>OPTION</u></b>]... [<b><u>FILE</u></b>]...
+			</p>
+			</blockquote>
+			<h2>DESCRIPTION</h2>
+
+			<blockquote>
+				<p>Assistant Professor @ University of Maribor.</p>
+				<p>I am interested in computational intelligence in sport research.</p>
+				<p>Interested also in numerical association rule mining.</p>
+				<p>Co-author of <a href="https://link.springer.com/book/10.1007/978-3-030-03490-0">Computational intelligence in sports</a> book.</p>
+				<p>Active packager in Fedora. Member of the <a href="https://neuro.fedoraproject.org">neuro-sig</a>.</p>
+				<p>Several IRONMAN/IRONMAN 70.3 finisher.</p>
+				<p>Finisher of double ultra triathlon.</p>
+			</blockquote>
+
+			<h2>ALSO KNOWN AS</h2>
+			<blockquote>
+				<p>iztokf, firefly-cpp</p>
+			</blockquote>
+
+			<h2>COPYRIGHT</h2>
+			<blockquote>
+				<p>This poor imitation of a man page is now licensed under the WTFPL license.</p>
+			</blockquote>
+
+			<h2>SEE ALSO</h2>
+			<blockquote>
+				<p><a href="mailto:iztok.fister1@um.si">e-mail</a>, <a href="https://orcid.org/0000-0002-6418-1272">orcid</a>, <a href="https://github.com/firefly-cpp">github</a> </p>
+				<p><a href="https://www.strava.com/athletes/62828673">strava</a>, <a href="https://www.athlinks.com/athletes/40567147">athlinks</a>, <a href="https://orcid.org/0000-0002-6418-1272">orcid</a></p>
+			</blockquote>
+		</div>
+	</body>
+	<script>
+	const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+	const currentTheme = localStorage.getItem('izt_theme');
+
+	if (currentTheme) {
+		document.documentElement.setAttribute('data-theme', currentTheme);
+	
+		if (currentTheme === 'dark') {
+			toggleSwitch.checked = true;
+		}
+	}
+
+	function switchTheme(e) {
+		if (e.target.checked) {
+			document.documentElement.setAttribute('data-theme', 'dark');
+			localStorage.setItem('izt_theme', 'dark');
+		}
+		else {        document.documentElement.setAttribute('data-theme', 'light');
+			localStorage.setItem('izt_theme', 'light');
+		}    
+	}
+
+	toggleSwitch.addEventListener('change', switchTheme, false);
+	</script>
+</html>
