@@ -1,6 +1,6 @@
 # Homepage
 
-This repository hosts the source code of my homepage, which lives on the following [URL](https://www.iztok-jr-fister.eu/).
+This repository hosts the source code of my homepage, which lives on the following [URL](https://www.iztok.xyz/).
 
 # References
 
